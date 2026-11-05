@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruyi Travels — Calendar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">✈</div>
+        <div><strong>Ruyi Travels</strong><span>Calendar</span></div>
+      </div>
+      <div class="top-actions">
+        <button class="icon-button notification" aria-label="Notifications">♧<i></i></button>
+        <button class="avatar" aria-label="Profile">AK</button>
+      </div>
+    </header>
+
+    <section class="calendar-area">
+      <div class="week-heading">
+        <span id="week-label">WEEK 1 • 1 NOV – 7 NOV</span>
+        <div class="week-arrows">
+          <button id="prev-week" aria-label="Previous week">‹</button>
+          <button id="next-week" aria-label="Next week">›</button>
+        </div>
+      </div>
+      <div class="week-viewport" id="week-viewport">
+        <div class="week-strip" id="week-strip"></div>
+      </div>
+
+      <nav class="category-row" aria-label="Booking categories">
+        <button class="category-pill" data-category="Tours">Tours <span>3</span></button>
+        <button class="category-pill" data-category="Activities">Activities <span>3</span></button>
+        <button class="category-pill" data-category="Hotel">Hotel <span>6</span></button>
+        <button class="category-pill active" data-category="Transport">Transport <span>6</span></button>
+      </nav>
+
+      <section class="agenda" id="agenda" aria-live="polite"></section>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <div><span>▦</span>Dashboard</div>
+      <div><span>♧</span>Bookings</div>
+      <div><span>▱</span>Inquiries</div>
+      <div class="selected"><span>▣</span>Calendar</div>
+      <div><span>⊞</span>More</div>
+    </nav>
+  </main>
+
+  <div class="modal-backdrop" id="modal-backdrop">
+    <section class="booking-sheet" id="booking-sheet" role="dialog" aria-modal="true" aria-label="Booking details">
+      <div class="sheet-handle"></div>
+      <header class="sheet-header">
+        <div class="customer-avatar" id="sheet-avatar">RJ</div>
+        <div class="customer-heading">
+          <div class="name-line"><strong id="sheet-name">Rohit Joshi</strong><span class="status confirmed" id="sheet-status">● Confirmed</span></div>
+          <p id="sheet-destination">Manali Resort Stay</p>
+          <div class="meta-line" id="sheet-meta">♙ 4 Pax　◷ 3N/4D　▢ 2 Nov – 5 Nov</div>
+        </div>
+        <button class="close-sheet" id="close-sheet" aria-label="Close">×</button>
+      </header>
+
+      <div class="tab-viewport" id="tab-viewport">
+        <nav class="tabs" id="tabs">
+          <button class="tab active" data-tab="customer">Customer Details</button>
+          <button class="tab" data-tab="guests">Guests (4)</button>
+          <button class="tab" data-tab="itinerary">Itinerary</button>
+          <button class="tab" data-tab="updates">Updates</button>
+        </nav>
+      </div>
+      <div class="sheet-content" id="sheet-content"></div>
+      <footer class="sheet-footer">
+        <button class="primary-action" id="confirm-booking">Confirm Booking</button>
+        <div class="secondary-actions">
+          <button>♧ <span>Call</span></button>
+          <button>▱ <span>Message</span></button>
+          <button>➤ <span>Forward</span></button>
+          <button>••• <span>More</span></button>
+        </div>
+      </footer>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
